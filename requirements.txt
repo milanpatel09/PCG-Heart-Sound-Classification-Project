@@ -1,6 +1,7 @@
 # Data Handling & Math
 numpy
 pandas
+matplotlib
 scipy
 tqdm
 
@@ -21,6 +22,6 @@ torchvision
 scikit-learn
 
 # Advanced Wavelets (Scattering Transform)
-# Add this new line
+pywt
 PyWavelets
 kymatio

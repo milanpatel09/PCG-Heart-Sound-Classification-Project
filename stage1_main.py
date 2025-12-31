@@ -54,7 +54,7 @@ def process_dataset():
             # --- LABEL MAPPING ---
             # PhysioNet uses: -1 (Abnormal), 1 (Normal)
             # We convert to: 1 (Abnormal/Positive), 0 (Normal/Negative)
-            binary_label = 1 if raw_label == -1 else 0
+            binary_label = 1 if raw_label == 1 else 0
             
             file_path = os.path.join(folder_path, f"{filename}.wav")
             
