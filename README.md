@@ -187,7 +187,7 @@ This performs random splitting, allowing data leakage.
 
 ---
 
-## Evaluation Metrics
+## 📈 Evaluation Metrics
 
 Models are evaluated using:
 
@@ -199,7 +199,7 @@ Models are evaluated using:
 
 ---
 
-## Key Findings
+## 📝 Key Findings
 
 * Best feature for 2D CNN (ResNet-18):
   Mel-Spectrogram > MFCC > CWT > STFT > WST
