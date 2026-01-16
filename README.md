@@ -26,18 +26,21 @@ After downloading, copy the following folders from the dataset:
 
 Then place them like this inside your cloned repository:
 
-```
+```text
 PCG-Heart-Sound-Classification-Thesis/
-│
 ├── data/
-│   └── raw/
-│       ├── training-a/
-│       ├── training-b/
-│       ├── training-c/
-│       ├── training-d/
-│       ├── training-e/
-│       └── training-f/
-```
+│   ├── raw/
+│   │   ├── training-a/
+│   │   ├── training-b/
+│   │   ├── ...
+│   │   └── training-f/
+├── src/
+├── stage1_main.py
+├── stage2_main.py
+├── stage3_classification.py
+├── stage3_leaky.py
+├── requirements.txt
+└── README.md
 
 ---
 
