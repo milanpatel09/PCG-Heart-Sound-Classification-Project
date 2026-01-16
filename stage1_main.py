@@ -10,7 +10,7 @@ from src.preprocessing import (
     normalize_signal
 )
 
-# --- CONFIGURATION ---
+# CONFIGURATION 
 RAW_DATA_PATH = 'data/raw'
 PROCESSED_DATA_PATH = 'data/processed'
 TARGET_SR = 1000
@@ -36,7 +36,7 @@ def process_dataset():
             continue
             
         # Load the REFERENCE.csv which contains labels
-        # CSV Format: filename, label (1=Normal, -1=Abnormal)
+        # CSV Format: filename, label (1=Abnormal, -1=Normal)
         ref_path = os.path.join(folder_path, 'REFERENCE.csv')
         try:
             df = pd.read_csv(ref_path, names=['filename', 'label'])
@@ -79,7 +79,7 @@ def process_dataset():
                 all_segments.append(seg)
                 all_labels.append(binary_label)
 
-    # --- SAVING ---
+    # SAVING
     if len(all_segments) == 0:
         print("ERROR: No data processed! Check your 'data/raw' folder structure.")
         return
