@@ -1,4 +1,4 @@
-# PCG Heart Sound Classification (M.Tech Thesis Project)
+# 🫀🩺🔊 PCG Heart Sound Classification Project
 
 This repository contains the complete implementation of an end-to-end deep learning pipeline for classifying Phonocardiogram (PCG) heart sound signals into Normal and Abnormal classes using time–frequency representations and a ResNet-18 model.
 
@@ -6,25 +6,16 @@ The project focuses on comparing multiple time–frequency features under a stri
 
 ---
 
-## Dataset
+## 📊 Dataset
 
 This project uses the **PhysioNet 2016 Heart Sound Dataset**.
 
 Download it from:
 [https://physionet.org/content/challenge-2016/1.0.0/](https://physionet.org/content/challenge-2016/1.0.0/)
 
-### Folder Setup
+### 📁 Folder Setup
 
-After downloading, copy the following folders from the dataset:
-
-* training-a
-* training-b
-* training-c
-* training-d
-* training-e
-* training-f
-
-Then place them like this inside your cloned repository:
+After downloading, copy the training a,b,c,d,e and f folders from the Physionet 2016 dataset to your cloned repository like below:
 
 ```text
 PCG-Heart-Sound-Classification-Thesis/
@@ -45,7 +36,7 @@ PCG-Heart-Sound-Classification-Thesis/
 
 ---
 
-## Features Compared
+## 🧩 Features Compared
 
 Five time–frequency representations are evaluated:
 
@@ -59,7 +50,7 @@ All features are converted to image-like inputs and classified using ResNet-18.
 
 ---
 
-## Environment Setup
+## 🛠️ Environment Setup
 
 ### 1. Clone the repository
 
@@ -96,11 +87,11 @@ pip install -r requirements.txt
 
 ---
 
-## Running the Pipeline (Stage-wise)
+## ⚙️ Running the Pipeline (Stage-wise)
 
 The project is divided into three main stages:
 
----
+--
 
 ### Stage 1: Preprocessing
 
@@ -119,14 +110,14 @@ Run:
 python stage1_main.py
 ```
 
-Output:
+Output: 3240 noisy audio recordings preprocessed into 24450 segments. (might change)
 
 ```
 data/processed/X_data.npy   # shape: (24450, 5000)
 data/processed/Y_data.npy
 ```
 
----
+--
 
 ### Stage 2: Feature Extraction
 
@@ -154,11 +145,11 @@ data/features/cwt.npy
 data/features/scattering.npy
 ```
 
----
+--
 
 ### Stage 3: Classification (No Leakage Setting)
 
-before stage 3 run:
+before stage 3 run: to generate groups.npy for group wise splitting to prevent leakage.
 ```
 python generate_groups.py
 ```
@@ -182,7 +173,7 @@ Models saved in:
 models_checkpoints/
 ```
 
----
+--
 
 ### Optional: Leakage Experiment
 
@@ -205,12 +196,6 @@ Models are evaluated using:
 * Specificity
 * F1-Score
 * Mean Accuracy = (Sensitivity + Specificity) / 2
-
-Best epoch is selected using priority:
-
-```
-M.Acc > Sensitivity > F1 > Specificity > Val.Acc
-```
 
 ---
 
