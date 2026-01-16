@@ -38,8 +38,8 @@ PCG-Heart-Sound-Classification-Thesis/
 ├── stage1_main.py
 ├── stage2_main.py
 ├── stage3_classification.py
-├── stage3_leaky.py
-├── requirements.txt
+├── .
+├── .
 └── README.md
 ```
 
@@ -108,7 +108,7 @@ This stage:
 
 * Resamples audio from 2000 Hz → 1000 Hz
 * Applies Schmidt spike removal
-* Applies Butterworth band-pass filter (25–400 Hz)
+* Applies Butterworth band-pass filter (25–450 Hz)
 * Performs Z-score normalization
 * Segments audio into 5s clips with 2.5s overlap
 * Saves output as NumPy arrays
@@ -158,12 +158,17 @@ data/features/scattering.npy
 
 ### Stage 3: Classification (No Leakage Setting)
 
-This stage:
+before stage 3 run:
+```
+python generate_groups.py
+```
+
+Classification stage:
 
 * Uses ResNet-18
 * Converts features to 3-channel images
 * Applies stratified, recording-wise split (80/20)
-* Trains model and selects best epoch
+* Trains model and test model and saves all .pth files
 
 Run:
 
@@ -187,7 +192,7 @@ To see optimism bias when leakage is allowed:
 python stage3_leaky.py
 ```
 
-This performs segmentation before splitting, allowing data leakage.
+This performs random splitting, allowing data leakage.
 
 ---
 
@@ -218,21 +223,12 @@ M.Acc > Sensitivity > F1 > Specificity > Val.Acc
 
 * Feature–model compatibility is more important than model depth.
 
----
+--- 
 
-## Future Work
-
-* Feature-level fusion using CNN confidence scores (logits)
-* Hybrid ML classifier on combined CNN outputs
-* Cross-dataset validation
-* Explainable AI integration (Grad-CAM, LIME)
+## 🧾 License
+This project is released under the MIT License.
 
 ---
 
-## Citation
-
-If you use this work, please cite:
-
-Milan Arvind Patel (2026)
-"Time-Frequency Analysis of Heart Sound Signals: A Comparative Study Using Convolutional Neural Networks"
-M.Tech Thesis, IIIT Bhubaneswar
+## 🙋 Author
+milanpatel09 — contributions and feedback welcome.
