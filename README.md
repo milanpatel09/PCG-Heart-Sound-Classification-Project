@@ -91,8 +91,6 @@ pip install -r requirements.txt
 
 The project is divided into three main stages:
 
---
-
 ### Stage 1: Preprocessing
 
 This stage:
@@ -117,7 +115,7 @@ data/processed/X_data.npy   # shape: (24450, 5000)
 data/processed/Y_data.npy
 ```
 
---
+-- xx --
 
 ### Stage 2: Feature Extraction
 
@@ -145,7 +143,7 @@ data/features/cwt.npy
 data/features/scattering.npy
 ```
 
---
+-- xx --
 
 ### Stage 3: Classification (No Leakage Setting)
 
@@ -172,8 +170,6 @@ Models saved in:
 ```
 models_checkpoints/
 ```
-
---
 
 ### Optional: Leakage Experiment
 
