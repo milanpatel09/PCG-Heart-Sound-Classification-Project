@@ -40,8 +40,8 @@ def schmidt_spike_removal(original_signal, fs):
     
     return clean_signal
 
-def butterworth_bandpass(data, lowcut=25, highcut=400, fs=1000, order=4):
-    # Applies a 4th order Butterworth bandpass filter (25-400 Hz).
+def butterworth_bandpass(data, lowcut=25, highcut=450, fs=1000, order=4):
+    # Applies a 4th order Butterworth bandpass filter (25-450 Hz).
     nyquist = 0.5 * fs
     low = lowcut / nyquist
     high = highcut / nyquist
