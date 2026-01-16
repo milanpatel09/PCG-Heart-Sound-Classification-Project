@@ -10,7 +10,7 @@ from src.features import (
     extract_cwt_single
 )
 
-# --- CONFIGURATION ---
+# CONFIGURATION
 PROCESSED_DATA_PATH = 'data/processed'
 FEATURES_PATH = 'data/features'
 BATCH_SIZE = 100 
@@ -31,7 +31,7 @@ def run_stage2():
     print(f"Loaded X_data: {X.shape}")
     print(f"Using Device: {'cuda' if torch.cuda.is_available() else 'cpu'}")
 
-    # --- 1. DRY RUN FOR SHAPES ---
+    # 1. DRY RUN FOR SHAPES 
     print("\nPerforming Dry Run to determine Feature Shapes...")
     dummy_input = torch.zeros(1, 5000) # 1 sample, 5000 timepoints
     dummy_np = np.zeros(5000)
@@ -49,7 +49,7 @@ def run_stage2():
     print(f"Scattering Shape: {shape_scat}")
     print(f"CWT Shape: {shape_cwt}")
 
-    # --- 2. INITIALIZE MEMMAPS ---
+    # 2. INITIALIZE MEMMAPS
     print("\nInitializing Master Matrices on SSD...")
     fp_spec = create_memmap(os.path.join(FEATURES_PATH, 'spectrogram'), 'spectrogram.npy', (N_SAMPLES, *shape_spec))
     fp_mel = create_memmap(os.path.join(FEATURES_PATH, 'melspec'), 'melspec.npy', (N_SAMPLES, *shape_mel))
@@ -59,7 +59,7 @@ def run_stage2():
     print(f"Allocating CWT (~{N_SAMPLES * 64 * 5000 * 4 / 1e9:.2f} GB)...")
     fp_cwt = create_memmap(os.path.join(FEATURES_PATH, 'cwt'), 'cwt.npy', (N_SAMPLES, *shape_cwt))
 
-    # --- 3. BATCH PROCESSING ---
+    # 3. BATCH PROCESSING
     print(f"\nStarting Extraction (Batch Size: {BATCH_SIZE})...")
     num_batches = int(np.ceil(N_SAMPLES / BATCH_SIZE))
     
