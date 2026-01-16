@@ -145,6 +145,18 @@ data/features/scattering.npy
 
 -- xx --
 
+### Optional: To Visualze the featuers
+
+Run:
+
+```
+python visualize_feautes_individual.py
+```
+
+check the visualization in the visualizations folder.
+
+-- xx --
+
 ### Stage 3: Classification (No Leakage Setting)
 
 before stage 3, Run: to generate groups.npy for group wise splitting to prevent leakage.
