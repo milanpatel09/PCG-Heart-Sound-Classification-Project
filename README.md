@@ -174,8 +174,15 @@ Classification stage:
 Run:
 
 ```
-python stage3_classification.py
+python stage3_classification.py --feature "feature_name" --arch "architecture_name"
 ```
+
+replace "feature_name" with: melspec, mfcc, cwt, spectrogram, scattering
+replace "architecture_name" with: resnet18, resnet34, resnet50
+
+One at a time.
+
+Example: "To run mfcc on resnet18: "python stage3_classification.py --feature mfcc --resnet18"
 
 Models saved in:
 
@@ -188,7 +195,7 @@ models_checkpoints/
 To see optimism bias when leakage is allowed:
 
 ```
-python stage3_leaky.py
+python stage3_leaky.py --feature "feature_name" --arch "architecture_name"
 ```
 
 This performs random splitting, allowing data leakage.
