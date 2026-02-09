@@ -222,6 +222,20 @@ Models are evaluated using:
 
 * Feature–model compatibility is more important than model depth.
 
+---
+
+## Future Work
+
+* Feature-Level Fusion Using CNN Confidence Scores: 
+  - Use CNN confidence scores (logits before softmax) from each feature
+  - Combine scores from all five features into one feature matrix
+  - Treat these as high-level learned features
+  - Feed them into ML Classifiers
+  - Hybrid model can capture complementary information.
+  - Can improve overall classification performance.
+
+
+
 --- 
 
 ## 🧾 License
